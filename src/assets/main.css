@@ -7,6 +7,14 @@
 }
 
 @font-face {
+  font-family: 'GeistRegular';
+  src: url('@/assets/fonts/geist/Geist-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'BigShouldersRegular';
   src: url('@/assets/fonts/big_shoulders/BigShoulders-Regular.ttf') format('truetype');
   font-weight: 400;
