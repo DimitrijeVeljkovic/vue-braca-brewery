@@ -13,7 +13,7 @@
   padding: 32px 80px;
   display: flex;
   justify-content: space-between;
-  
+
   h2 {
     color: #060608;
     font-size: 32px;
