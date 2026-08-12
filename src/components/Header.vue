@@ -3,12 +3,12 @@
 <template>
   <div class="nav-menu">
     <div class="nav-menu-left">
-      <router-link to="/home">HOME</router-link>
+      <router-link to="/home">Home</router-link>
     </div>
     <div class="nav-menu-middle">
-      <router-link to="/about">ABOUT</router-link>
-      <router-link to="/contact">CONTACT</router-link>
-      <router-link to="/store">STORE</router-link>
+      <router-link to="/about">About</router-link>
+      <router-link to="/contact">Contact</router-link>
+      <router-link to="/store">Store</router-link>
     </div>
     <div class="nav-menu-right">
       <router-link to="/cart" class="button button-cart">
@@ -35,8 +35,9 @@
     text-decoration: none;
     padding: 5px 10px;
     color: #a5a5b0;
-    font-family: 'GeistMonoRegular', sans-serif;
+    font-family: 'GeistMonoRegular', monospace;
     font-size: 13px;
+    text-transform: uppercase;
 
     &:hover {
       color: #e2ff00;
@@ -61,6 +62,7 @@
 
   .button-access {
     color: #e2ff00;
+    text-transform: capitalize;
   }
 
   .nav-menu-right {

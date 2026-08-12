@@ -13,7 +13,7 @@
         voluptates, quibusdam, quidem, quos, quae, quibusdam, quibusdam, quibusdam.
       </p>
       <div class="hero-buttons">
-        <router-link to="/store" class="button button-store">VISIT STORE ></router-link>
+        <router-link to="/store" class="button button-store">Visit Store ></router-link>
         <router-link to="/about" class="button button-about">Learn More</router-link>
       </div>
     </div>
@@ -32,6 +32,7 @@
     height: 760px;
     width: 50%;
     object-fit: cover;
+    mask-image: linear-gradient(to right, transparent 0%, black 30%);
   }
 
   .hero-text {
@@ -66,7 +67,7 @@
         padding: 18px 32px;
         text-decoration: none;
         color: #0e0e12;
-        font-family: 'GeistMonoRegular', sans-serif;
+        font-family: 'GeistMonoRegular', monospace;
         font-size: 18px;
       }
 
@@ -74,6 +75,10 @@
         border-color: #1c1c24;
         background-color: transparent;
         color: #f8f8f9;
+      }
+
+      .button-store {
+        text-transform: uppercase;
       }
     }
   }
