@@ -19,49 +19,51 @@
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .nav-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 25px 80px;
-  border-bottom: 1px solid #1c1c24;
+  border-bottom: 1px solid $color-darkgray;
 
   .router-link-active {
-    color: #e2ff00;
+    color: $color-yellow;
   }
 
   a {
     text-decoration: none;
     padding: 5px 10px;
-    color: #a5a5b0;
+    color: $color-lightgray;
     font-family: 'GeistMonoRegular', monospace;
     font-size: 13px;
     text-transform: uppercase;
+    display: inline-block;
 
     &:hover {
-      color: #e2ff00;
+      color: $color-yellow;
+      transform: scale(1.05);
     }
 
     .pi-shopping-bag {
       margin-right: 5px;
       font-size: 16px;
-      color: #e2ff00;
+      color: $color-yellow;
     }
   }
 
   .button {
-    border: 1px solid #e2ff00;
+    border: 1px solid $color-yellow;
     border-radius: 3px;
   }
 
   .button-cart {
-    border-color: #1c1c24;
-    background-color: #0e0e12;
+    border-color: $color-darkgray;
+    background-color: $color-black-2;
   }
 
   .button-access {
-    color: #e2ff00;
+    color: $color-yellow;
     text-transform: capitalize;
   }
 

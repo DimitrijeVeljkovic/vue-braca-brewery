@@ -4,4 +4,4 @@
   <h1>Contact</h1>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped></style>

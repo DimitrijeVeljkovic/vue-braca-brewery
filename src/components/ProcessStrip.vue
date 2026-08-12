@@ -3,28 +3,32 @@
 <template>
   <div class="strip">
     <h2>Malt Milling // Mashing // Boiling // Cooling // Fermentation // Bottling</h2>
-    <span>The Brewing Process</span>
+    <router-link to="/about">The Brewing Process</router-link>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .strip {
-  background-color: #e2ff00;
+  background-color: $color-yellow;
   padding: 32px 80px;
   display: flex;
   justify-content: space-between;
 
   h2 {
-    color: #060608;
+    color: $color-black;
     font-size: 32px;
     text-transform: uppercase;
   }
 
-  span {
+  a {
     font-family: 'GeistMonoRegular', monospace;
-    color: #060608;
+    color: $color-black;
     font-size: 16px;
     font-weight: bold;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
 </style>

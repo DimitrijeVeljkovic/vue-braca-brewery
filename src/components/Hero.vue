@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .hero {
   padding-left: 80px;
   display: flex;
@@ -32,7 +32,7 @@
     height: 760px;
     width: 50%;
     object-fit: cover;
-    mask-image: linear-gradient(to right, transparent 0%, black 30%);
+    mask-image: linear-gradient(to right, transparent 0%, $color-black 30%);
   }
 
   .hero-text {
@@ -45,13 +45,13 @@
       font-size: 90px;
 
       .highlight {
-        color: #e2ff00;
+        color: $color-yellow;
       }
     }
 
     p {
       font-size: 18px;
-      color: #a5a5b0;
+      color: $color-lightgray;
       width: 70%;
       font-family: 'GeistRegular', sans-serif;
     }
@@ -61,20 +61,24 @@
       gap: 20px;
 
       .button {
-        border: 1px solid #e2ff00;
-        background-color: #e2ff00;
+        border: 1px solid $color-yellow;
+        background-color: $color-yellow;
         border-radius: 3px;
         padding: 18px 32px;
         text-decoration: none;
-        color: #0e0e12;
+        color: $color-black-2;
         font-family: 'GeistMonoRegular', monospace;
         font-size: 18px;
+
+        &:hover {
+          transform: scale(1.05);
+        }
       }
 
       .button-about {
-        border-color: #1c1c24;
+        border-color: $color-darkgray;
         background-color: transparent;
-        color: #f8f8f9;
+        color: $color-white;
       }
 
       .button-store {

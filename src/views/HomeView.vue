@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ProcessStrip from '../components/ProcessStrip.vue'
-import Hero from '../components/Hero.vue'
+import ProcessStrip from '@/components/ProcessStrip.vue'
+import Hero from '@/components/Hero.vue'
 </script>
 
 <template>
@@ -8,4 +8,4 @@ import Hero from '../components/Hero.vue'
   <ProcessStrip />
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped></style>
