@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import ProcessStrip from '@/components/ProcessStrip.vue'
-import Hero from '@/components/Hero.vue'
+import ProcessStripComponent from '@/components/ProcessStripComponent.vue'
+import HeroComponent from '@/components/HeroComponent.vue'
+import FeaturedBeersComponent from '@/components/FeaturedBeersComponent.vue'
 </script>
 
 <template>
-  <Hero />
-  <ProcessStrip />
+  <HeroComponent />
+  <ProcessStripComponent />
+  <FeaturedBeersComponent />
 </template>
 
 <style lang="scss" scoped></style>
