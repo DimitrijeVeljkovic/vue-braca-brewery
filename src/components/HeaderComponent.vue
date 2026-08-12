@@ -21,11 +21,15 @@
 
 <style lang="scss" scoped>
 .nav-menu {
+  position: sticky;
+  z-index: 1;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 25px 80px;
   border-bottom: 1px solid $color-darkgray;
+  background-color: $color-black;
 
   .router-link-active {
     color: $color-yellow;

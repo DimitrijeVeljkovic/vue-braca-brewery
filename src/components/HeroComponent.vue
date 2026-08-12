@@ -14,7 +14,7 @@
       </p>
       <div class="hero-buttons">
         <router-link to="/store" class="button button-store">Visit Store ></router-link>
-        <router-link to="/about" class="button button-about">Learn More</router-link>
+        <router-link to="/about" class="button button-about">Learn More +</router-link>
       </div>
     </div>
     <img src="https://insights.ehl.edu/hubfs/1440/1440x960-beer-types.jpg" alt="Hero Image" />
