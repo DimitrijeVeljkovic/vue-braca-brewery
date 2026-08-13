@@ -21,9 +21,6 @@
 
 <style lang="scss" scoped>
 .nav-menu {
-  position: sticky;
-  z-index: 1;
-  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,7 +43,6 @@
 
     &:hover {
       color: $color-yellow;
-      transform: scale(1.05);
     }
 
     .pi-shopping-bag {

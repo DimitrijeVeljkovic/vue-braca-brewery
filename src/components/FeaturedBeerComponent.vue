@@ -73,7 +73,6 @@ defineProps<{
     padding: 16px 0;
 
     &:hover {
-      transform: scale(1.05);
       cursor: pointer;
     }
   }

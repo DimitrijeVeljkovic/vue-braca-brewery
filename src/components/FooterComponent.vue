@@ -112,7 +112,6 @@
 
       &:hover {
         color: $color-yellow;
-        transform: scale(1.05);
       }
     }
   }
@@ -148,6 +147,8 @@
       border: 1px solid $color-darkgray;
       background-color: $color-black-2;
       color: $color-lightgray;
+      font-family: 'GeistMonoRegular', monospace;
+      text-transform: uppercase;
 
       &::placeholder {
         color: $color-gray;
@@ -166,7 +167,7 @@
       text-transform: uppercase;
 
       &:hover {
-        transform: scale(1.05);
+        cursor: pointer;
       }
     }
   }
@@ -188,7 +189,6 @@
 
       &:hover {
         color: $color-yellow;
-        transform: scale(1.05);
       }
     }
   }

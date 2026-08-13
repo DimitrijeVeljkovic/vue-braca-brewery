@@ -25,10 +25,6 @@
     color: $color-black;
     font-size: 16px;
     font-weight: bold;
-
-    &:hover {
-      transform: scale(1.05);
-    }
   }
 }
 </style>

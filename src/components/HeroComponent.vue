@@ -69,10 +69,6 @@
         color: $color-black-2;
         font-family: 'GeistMonoRegular', monospace;
         font-size: 18px;
-
-        &:hover {
-          transform: scale(1.05);
-        }
       }
 
       .button-about {
