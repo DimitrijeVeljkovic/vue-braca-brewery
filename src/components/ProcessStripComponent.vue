@@ -3,7 +3,7 @@
 <template>
   <div class="strip">
     <h2>Malt Milling // Mashing // Boiling // Cooling // Fermentation // Bottling</h2>
-    <router-link to="/about">The Brewing Process</router-link>
+    <router-link to="/about#brewing-process">The Brewing Process</router-link>
   </div>
 </template>
 
