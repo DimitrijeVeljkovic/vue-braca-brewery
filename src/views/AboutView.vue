@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import OriginComponent from '@/components/OriginComponent.vue'
+</script>
 
 <template>
-  <h1>About</h1>
+  <OriginComponent />
 </template>
 
 <style lang="scss" scoped></style>
