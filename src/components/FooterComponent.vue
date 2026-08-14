@@ -21,8 +21,8 @@
       </div>
       <div class="footer__access">
         <h4>Access Point</h4>
-        <router-link to="/login">Login</router-link>
-        <router-link to="/signup">Signup</router-link>
+        <router-link to="/login">Log In</router-link>
+        <router-link to="/signup">Sign Up</router-link>
       </div>
       <div class="footer__subscribe">
         <h4>Subscribe</h4>

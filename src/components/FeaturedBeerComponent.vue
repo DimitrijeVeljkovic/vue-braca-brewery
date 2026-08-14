@@ -35,6 +35,7 @@ defineProps<{
   border: 1px solid $color-darkgray;
   background-color: $color-black-2;
   border-radius: 3px;
+  overflow: hidden;
 
   img {
     width: 100%;

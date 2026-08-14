@@ -2,19 +2,18 @@
 
 <template>
   <div class="nav-menu">
-    <div class="nav-menu-left">
+    <div class="nav-menu__left">
       <router-link to="/home">Home</router-link>
-    </div>
-    <div class="nav-menu-middle">
       <router-link to="/about">About</router-link>
       <router-link to="/contact">Contact</router-link>
       <router-link to="/store">Store</router-link>
     </div>
-    <div class="nav-menu-right">
-      <router-link to="/cart" class="button button-cart">
-        <i class="pi pi-shopping-bag"></i>[0]
+    <div class="nav-menu__right">
+      <router-link to="/cart" class="button button__cart">
+        <i class="pi pi-shopping-cart"></i>[0]
       </router-link>
-      <router-link to="/access" class="button button-access">Access Point</router-link>
+      <router-link to="/login" class="button button__access">Log <span>in</span></router-link>
+      <router-link to="/signup" class="button button__access">Sign <span>up</span></router-link>
     </div>
   </div>
 </template>
@@ -45,29 +44,30 @@
       color: $color-yellow;
     }
 
-    .pi-shopping-bag {
+    .pi-shopping-cart {
       margin-right: 5px;
       font-size: 16px;
       color: $color-yellow;
+      vertical-align: middle;
     }
   }
 
   .button {
-    border: 1px solid $color-yellow;
+    border: 1px solid $color-darkgray;
     border-radius: 3px;
-  }
-
-  .button-cart {
-    border-color: $color-darkgray;
     background-color: $color-black-2;
+
+    &__access {
+      text-transform: capitalize;
+      border-color: $color-yellow;
+
+      span {
+        color: $color-yellow;
+      }
+    }
   }
 
-  .button-access {
-    color: $color-yellow;
-    text-transform: capitalize;
-  }
-
-  .nav-menu-right {
+  &__right {
     display: flex;
     gap: 16px;
   }
