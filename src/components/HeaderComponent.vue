@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useCart } from '@/stores/useCart'
+import { storeToRefs } from 'pinia'
+
+const cartStore = useCart()
+const { cartCount } = storeToRefs(cartStore)
+</script>
 
 <template>
   <div class="nav-menu">
@@ -10,7 +16,7 @@
     </div>
     <div class="nav-menu__right">
       <router-link to="/cart" class="button button__cart">
-        <i class="pi pi-shopping-cart"></i>[0]
+        <i class="pi pi-shopping-cart"></i>[{{ cartCount }}]
       </router-link>
       <router-link to="/login" class="button button__access">Log <span>in</span></router-link>
       <router-link to="/signup" class="button button__access">Sign <span>up</span></router-link>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useCart } from '@/stores/useCart'
+
 defineProps<{
   beer: {
     id: number
@@ -10,6 +12,8 @@ defineProps<{
     type: string
   }
 }>()
+
+const { addToCart } = useCart()
 </script>
 
 <template>
@@ -26,7 +30,7 @@ defineProps<{
       </div>
       <p class="description">{{ beer.description }}</p>
     </div>
-    <button class="add-to-cart">Load To Cart +</button>
+    <button class="add-to-cart" @click="addToCart(beer.id)">Load To Cart +</button>
   </div>
 </template>
 
@@ -95,6 +99,7 @@ defineProps<{
 
   .name {
     font-size: 28px;
+    text-transform: uppercase;
   }
 
   .price {

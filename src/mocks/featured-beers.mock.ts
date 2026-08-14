@@ -10,7 +10,7 @@ export const FEATURED_BEERS_MOCK = [
     type: 'Pilsner',
   },
   {
-    id: 2,
+    id: 3,
     name: 'SmashK.O. Simcoe',
     description:
       'A bold and hoppy India Pale Ale with a strong citrus aroma and a balanced bitterness.',
@@ -20,7 +20,7 @@ export const FEATURED_BEERS_MOCK = [
     type: 'IPA',
   },
   {
-    id: 3,
+    id: 2,
     name: 'SmashK.O. Centennial',
     description:
       'A rich and creamy stout with notes of chocolate and coffee, perfect for sipping on a cold evening.',
