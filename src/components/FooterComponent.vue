@@ -4,7 +4,7 @@
   <div class="footer">
     <div class="footer__top">
       <div class="footer__company-info">
-        <h2>Braca Brewery</h2>
+        <img src="@/assets/images/logo.png" alt="Logo" />
         <p class="footer__description">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam voluptas necessitatibus
           excepturi! Nobis sequi blanditiis sit sunt sint voluptatem autem! Mollitia reprehenderit
@@ -69,8 +69,9 @@
     flex-direction: column;
     gap: 16px;
 
-    h2 {
-      font-size: 28px;
+    img {
+      height: 60px;
+      width: fit-content;
     }
 
     p {

@@ -31,7 +31,7 @@ const { cartCount } = storeToRefs(cartStore)
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 80px;
+  padding: 5px 80px;
   border-bottom: 1px solid $color-darkgray;
   background-color: $color-black;
 
@@ -41,7 +41,6 @@ const { cartCount } = storeToRefs(cartStore)
 
   a {
     text-decoration: none;
-    padding: 5px 10px;
     color: $color-lightgray;
     font-family: 'GeistMonoRegular', monospace;
     font-size: 13px;
@@ -78,11 +77,16 @@ const { cartCount } = storeToRefs(cartStore)
   &__right {
     display: flex;
     gap: 16px;
+
+    a {
+      padding: 5px 10px;
+    }
   }
 
   &__left {
     display: flex;
     align-items: center;
+    gap: 20px;
 
     img {
       height: 60px;
