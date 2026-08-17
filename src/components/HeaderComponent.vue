@@ -9,7 +9,9 @@ const { cartCount } = storeToRefs(cartStore)
 <template>
   <div class="nav-menu">
     <div class="nav-menu__left">
-      <router-link to="/home">Home</router-link>
+      <router-link to="/home">
+        <img src="@/assets/images/logo.png" alt="Logo" />
+      </router-link>
       <router-link to="/about">About</router-link>
       <router-link to="/contact">Contact</router-link>
       <router-link to="/store">Store</router-link>
@@ -29,7 +31,7 @@ const { cartCount } = storeToRefs(cartStore)
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 80px;
+  padding: 0 80px;
   border-bottom: 1px solid $color-darkgray;
   background-color: $color-black;
 
@@ -76,6 +78,15 @@ const { cartCount } = storeToRefs(cartStore)
   &__right {
     display: flex;
     gap: 16px;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 60px;
+    }
   }
 }
 </style>

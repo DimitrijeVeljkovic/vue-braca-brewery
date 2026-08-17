@@ -85,13 +85,13 @@ const brewers = BREWERS
     }
 
     span {
-      color: $color-blue;
-      border: 1px solid $color-blue;
+      color: $color-red;
+      border: 1px solid $color-red;
       padding: 4px 8px;
       border-radius: 3px;
       text-transform: uppercase;
       font-size: 12px;
-      background-color: rgb($color-blue, 0.1);
+      background-color: rgb($color-red, 0.1);
     }
   }
 
