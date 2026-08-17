@@ -8,7 +8,7 @@ const allBeers = ALL_BEERS
 
 <template>
   <div class="store">
-    <h1>Welcome to <span>Braca Brewery</span> store</h1>
+    <h1>Welcome to <span>Braća Brewery</span> store</h1>
     <div class="store__products">
       <StoreItemComponent v-for="beer in allBeers" :key="beer.id" :storeItem="beer" />
     </div>
@@ -31,8 +31,9 @@ const allBeers = ALL_BEERS
 
   &__products {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 24px;
+    align-items: start;
   }
 }
 </style>

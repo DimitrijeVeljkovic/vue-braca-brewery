@@ -8,7 +8,7 @@
     />
     <div class="origin__text">
       <span>Since: 2024</span>
-      <h1>Origin of Braca Brewery</h1>
+      <h1>Origin of Braća Brewery</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde earum illum error, enim facere
         magnam architecto dolor alias tenetur minima assumenda necessitatibus, ab iure deleniti

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { useCart } from '@/stores/useCart'
 
-defineProps<{
+const props = defineProps<{
   storeItem: {
     id: number
     name: string
     description: string
-    imageUrl: string
+    imageName: string
     price: number
     abv: number
     type: string
@@ -15,17 +15,18 @@ defineProps<{
 }>()
 
 const { addToCart } = useCart()
+const imagePath = new URL(`../assets/images/${props.storeItem.imageName}`, import.meta.url).href
 </script>
 
 <template>
   <div class="store-item">
-    <img :src="storeItem.imageUrl" :alt="storeItem.name" />
+    <img :src="imagePath" :alt="storeItem.name" />
     <p class="store-item__type">{{ storeItem.type }}</p>
     <div class="store-item__info">
       <div>
         <span>Alc by vol</span>
         <br />
-        <span class="store-item__info--yellow">{{ storeItem.abv }}%</span>
+        <span class="store-item__info--yellow">{{ storeItem.abv.toFixed(2) }}%</span>
       </div>
       <div>
         <span>Volume</span>
@@ -36,7 +37,7 @@ const { addToCart } = useCart()
     <div class="store-item__details">
       <div class="store-item__details-heading">
         <h2>{{ storeItem.name }}</h2>
-        <span>${{ storeItem.price }}</span>
+        <span>{{ storeItem.price.toFixed(2) }} RSD</span>
       </div>
       <p>{{ storeItem.description }}</p>
     </div>
@@ -52,9 +53,7 @@ const { addToCart } = useCart()
   background-color: $color-black-2;
 
   img {
-    height: 300px;
     width: 100%;
-    object-fit: cover;
   }
 
   &__type {

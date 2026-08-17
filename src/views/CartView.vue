@@ -15,11 +15,13 @@ const cartItems = computed(() => {
     .map((product: any) => {
       const quantity = cart.value.filter((id) => id === product.id).length
       const total = quantity * product.price
+      const imagePath = new URL(`../assets/images/${product.imageName}`, import.meta.url).href
 
       return {
         ...product,
         quantity,
         total,
+        imagePath,
       }
     })
 })
@@ -43,12 +45,12 @@ onMounted(() => {
         </div>
         <div class="cart__item" v-for="item in cartItems">
           <div class="cart__item-details">
-            <img :src="item.imageUrl" :alt="item.name" />
+            <img :src="item.imagePath" :alt="item.name" />
             <div>
               <h3>{{ item.name }}</h3>
               <div>
                 <span class="cart__item-type">{{ item.type }}</span>
-                <span class="cart__item-abv">ABV: {{ item.abv }}</span>
+                <span class="cart__item-abv">ABV: {{ item.abv.toFixed(2) }}%</span>
               </div>
             </div>
           </div>
@@ -57,8 +59,8 @@ onMounted(() => {
             <span>{{ item.quantity }}</span>
             <button @click="addToCart(item.id)">+</button>
           </div>
-          <div class="cart__item-price">${{ item.price }}</div>
-          <div class="cart__item-total">${{ item.total }}</div>
+          <div class="cart__item-price">{{ item.price.toFixed(2) }} RSD</div>
+          <div class="cart__item-total">{{ item.total.toFixed(2) }} RSD</div>
         </div>
       </div>
     </div>
@@ -131,7 +133,6 @@ onMounted(() => {
     border-radius: 3px;
 
     img {
-      height: 80px;
       width: 80px;
       object-fit: cover;
       border-radius: 3px;

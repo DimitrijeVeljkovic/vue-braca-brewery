@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { useCart } from '@/stores/useCart'
 
-defineProps<{
+const props = defineProps<{
   beer: {
     id: number
     name: string
     description: string
-    imageUrl: string
+    imageName: string
     price: number
     abv: number
     type: string
@@ -14,19 +14,20 @@ defineProps<{
 }>()
 
 const { addToCart } = useCart()
+const imagePath = new URL(`../assets/images/${props.beer.imageName}`, import.meta.url).href
 </script>
 
 <template>
   <div class="featured-beer">
-    <img :src="beer.imageUrl" :alt="beer.name" />
+    <img :src="imagePath" :alt="beer.name" />
     <div class="featured-beer__details">
       <span class="type">{{ beer.type }}</span>
-      <span class="abv">ABV: {{ beer.abv }}%</span>
+      <span class="abv">ABV: {{ beer.abv.toFixed(2) }}%</span>
     </div>
     <div class="featured-beer__description">
       <div class="featured-beer__info">
         <h2 class="name">{{ beer.name }}</h2>
-        <span class="price">${{ beer.price.toFixed(2) }}</span>
+        <span class="price">{{ beer.price.toFixed(2) }} RSD</span>
       </div>
       <p class="description">{{ beer.description }}</p>
     </div>
@@ -43,8 +44,6 @@ const { addToCart } = useCart()
 
   img {
     width: 100%;
-    height: 320px;
-    object-fit: cover;
   }
 
   &__details {
