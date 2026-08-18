@@ -7,7 +7,7 @@ const brewers = BREWERS
 <template>
   <div class="brewmasters">
     <div class="brewmasters__heading">
-      <h2>Meet the Brewers</h2>
+      <h3>Meet the Brewers</h3>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolorem unde beatae, sequi
         quisquam iste fugiat distinctio non rem, tempora assumenda aperiam. Quaerat facere sunt
@@ -19,7 +19,7 @@ const brewers = BREWERS
         <img :src="brewer.imageUrl" :alt="brewer.name" />
         <div class="brewmasters__info">
           <div class="brewmasters__details">
-            <h3>{{ brewer.name }}</h3>
+            <h4>{{ brewer.name }}</h4>
             <span>{{ brewer.title }}</span>
           </div>
           <p>{{ brewer.description }}</p>
@@ -31,25 +31,15 @@ const brewers = BREWERS
 
 <style lang="scss" scoped>
 .brewmasters {
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
-  padding: 80px;
+  @include flex-column($space-4xl);
+  @include container-padding;
 
   p {
-    color: $color-lightgray;
-    font-family: 'GeistRegular', sans-serif;
-    font-size: 16px;
-  }
-
-  h2 {
-    font-size: 56px;
-    text-transform: uppercase;
+    @include text-body;
   }
 
   &__heading {
-    display: flex;
-    justify-content: space-between;
+    @include flex-between;
 
     p {
       width: 30%;
@@ -57,15 +47,11 @@ const brewers = BREWERS
   }
 
   &__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    @include grid-columns(2, $space-4xl);
   }
 
   &__card {
-    background-color: $color-black-2;
-    border: 1px solid $color-darkgray;
-    border-radius: 3px;
+    @include card;
 
     img {
       height: 300px;
@@ -75,32 +61,17 @@ const brewers = BREWERS
   }
 
   &__details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    h3 {
-      font-size: 28px;
-      text-transform: uppercase;
-    }
+    @include flex-between(center);
 
     span {
-      color: $color-red;
-      border: 1px solid $color-red;
-      padding: 4px 8px;
-      border-radius: 3px;
-      text-transform: uppercase;
-      font-size: 12px;
-      background-color: rgb($color-red, 0.1);
+      @include tag($color-accent, $color-accent, $color-accent);
     }
   }
 
   &__info {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    border-top: 1px solid $color-darkgray;
+    @include container-padding($space-2xl, $space-2xl);
+    @include flex-column($space-2xl);
+    @include border-top;
   }
 }
 </style>

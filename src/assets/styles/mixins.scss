@@ -12,10 +12,10 @@
 }
 
 /// Flex row with space-between
-@mixin flex-between {
+@mixin flex-between($align-items: flex-start) {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: $align-items;
 }
 
 /// Flex column layout
