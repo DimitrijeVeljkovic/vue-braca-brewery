@@ -6,11 +6,11 @@ const steps = BREWING_STEPS
 
 <template>
   <div class="brewing-process" id="brewing-process">
-    <h2>The Brewing Process</h2>
+    <h3>The Brewing Process</h3>
     <div class="brewing-process__steps">
       <div v-for="(step, index) in steps" :key="index" class="brewing-process__step">
         <span>Step #{{ index + 1 }}</span>
-        <h3>{{ step.title }}</h3>
+        <h4>{{ step.title }}</h4>
         <p>{{ step.description }}</p>
       </div>
     </div>
@@ -19,50 +19,27 @@ const steps = BREWING_STEPS
 
 <style lang="scss" scoped>
 .brewing-process {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 80px;
-  background-color: $color-black-2;
-  border-top: 1px solid $color-darkgray;
-  border-bottom: 1px solid $color-darkgray;
-
-  h2 {
-    font-size: 56px;
-    text-transform: uppercase;
-  }
+  @include flex-column($space-4xl);
+  @include container-padding;
+  @include border-top;
+  @include border-bottom;
+  background-color: $color-background-secondary;
 
   &__steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    @include grid-columns(3, $space-2xl);
   }
 
   &__step {
-    padding: 24px;
-    background-color: $color-black;
-    border: 1px solid $color-darkgray;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    @include container-padding($space-2xl, $space-2xl);
+    @include card($color-background);
+    @include flex-column($space-lg);
 
     span {
-      font-size: 16px;
-      font-family: 'GeistMonoRegular', monospace;
-      text-transform: uppercase;
-      color: $color-yellow;
-    }
-
-    h3 {
-      font-size: 24px;
-      text-transform: uppercase;
+      @include text-mono($font-size-body, $color-primary);
     }
 
     p {
-      color: $color-lightgray;
-      font-size: 14px;
-      font-family: 'GeistRegular', sans-serif;
+      @include text-body($font-size-sm);
     }
   }
 }

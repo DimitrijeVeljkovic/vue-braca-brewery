@@ -31,22 +31,22 @@ $font-display: 'BigShouldersRegular', 'Roboto', sans-serif;
 // SPACING SCALE
 // ============================================
 // Use these for consistent spacing throughout the application
-$space-xs: 4px;
-$space-sm: 8px;
-$space-md: 12px;
-$space-lg: 16px;
-$space-xl: 20px;
-$space-2xl: 24px;
-$space-3xl: 32px;
-$space-4xl: 40px;
-$space-5xl: 80px;
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 0.75rem;
+$space-lg: 1rem;
+$space-xl: 1.25rem;
+$space-2xl: 1.5rem;
+$space-3xl: 2rem;
+$space-4xl: 2.5rem;
+$space-5xl: 5rem;
 
 // ============================================
 // BORDER RADIUS
 // ============================================
-$border-radius-sm: 3px;
-$border-radius-md: 6px;
-$border-radius-lg: 8px;
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 0.75rem;
 
 // ============================================
 // BORDER STYLES
@@ -58,19 +58,19 @@ $border-width: 1px;
 // TYPOGRAPHY SIZES
 // ============================================
 // Headings
-$font-size-h1: 90px;
-$font-size-h2: 64px;
-$font-size-h3: 56px;
-$font-size-h4: 28px;
-$font-size-h5: 24px;
-$font-size-h6: 18px;
+$font-size-h1: 5.75rem;
+$font-size-h2: 4rem;
+$font-size-h3: 3.5rem;
+$font-size-h4: 1.75rem;
+$font-size-h5: 1.5rem;
+$font-size-h6: 1rem;
 
 // Body
-$font-size-large: 18px;
-$font-size-body: 16px;
-$font-size-sm: 14px;
-$font-size-xs: 13px;
-$font-size-2xs: 12px;
+$font-size-large: 1.25rem;
+$font-size-body: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.8125rem;
+$font-size-2xs: 0.75rem;
 
 // ============================================
 // Z-INDEX SCALE
