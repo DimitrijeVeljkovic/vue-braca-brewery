@@ -34,14 +34,16 @@ const imagePath = new URL(`../assets/images/${props.storeItem.imageName}`, impor
         <span class="store-item__info--yellow">{{ storeItem.volume }}ml</span>
       </div>
     </div>
-    <div class="store-item__details">
-      <div class="store-item__details-heading">
-        <h2>{{ storeItem.name }}</h2>
-        <span>{{ storeItem.price.toFixed(2) }} RSD</span>
+    <div class="store-item__bottom">
+      <div class="store-item__details">
+        <div class="store-item__details-heading">
+          <h2>{{ storeItem.name }}</h2>
+          <span>{{ storeItem.price.toFixed(2) }} RSD</span>
+        </div>
+        <p>{{ storeItem.description }}</p>
       </div>
-      <p>{{ storeItem.description }}</p>
+      <button class="store-item__button" @click="addToCart(storeItem.id)">Load to cart +</button>
     </div>
-    <button class="store-item__button" @click="addToCart(storeItem.id)">Load to cart +</button>
   </div>
 </template>
 
@@ -51,6 +53,8 @@ const imagePath = new URL(`../assets/images/${props.storeItem.imageName}`, impor
   border-radius: 3px;
   overflow: hidden;
   background-color: $color-black-2;
+  display: flex;
+  flex-direction: column;
 
   img {
     width: 100%;
@@ -86,6 +90,13 @@ const imagePath = new URL(`../assets/images/${props.storeItem.imageName}`, impor
       font-size: 13px;
       font-weight: bold;
     }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
   }
 
   &__details {

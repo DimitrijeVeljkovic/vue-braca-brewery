@@ -33,7 +33,6 @@ const allBeers = ALL_BEERS
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 24px;
-    align-items: start;
   }
 }
 </style>

@@ -46,7 +46,6 @@ const beers = FEATURED_BEERS_MOCK
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    align-items: start;
   }
 }
 </style>

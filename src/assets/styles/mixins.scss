@@ -1,0 +1,238 @@
+// ============================================
+// FLEXBOX MIXINS
+// ============================================
+
+/// Center content using flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/// Flex row with space-between
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/// Flex column layout
+@mixin flex-column($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  @if $gap > 0 {
+    gap: $gap;
+  }
+}
+
+// ============================================
+// GRID MIXINS
+// ============================================
+
+/// Equal columns grid
+@mixin grid-columns($columns, $gap: $space-3xl) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+/// Responsive auto-fit grid
+@mixin grid-auto-fit($min-width: 300px, $gap: $space-xl) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+// ============================================
+// TYPOGRAPHY MIXINS
+// ============================================
+
+/// Monospace text styling (for labels, codes, buttons)
+@mixin text-mono($size: $font-size-xs, $color: $color-text-secondary) {
+  font-family: $font-mono;
+  font-size: $size;
+  color: $color;
+  text-transform: uppercase;
+}
+
+/// Body text styling
+@mixin text-body($size: $font-size-body, $color: $color-text-secondary) {
+  font-family: $font-sans;
+  font-size: $size;
+  color: $color;
+}
+
+/// Display/heading text
+@mixin text-display($size: $font-size-h2, $color: $color-text-primary) {
+  font-family: $font-display;
+  font-size: $size;
+  color: $color;
+  text-transform: uppercase;
+}
+
+/// Description text (gray, sans-serif, smaller)
+@mixin text-description($size: $font-size-sm) {
+  @include text-body($size, $color-text-secondary);
+  font-family: $font-sans;
+}
+
+// ============================================
+// BORDER & SHADOW MIXINS
+// ============================================
+
+/// Default border
+@mixin border-default {
+  border: $border-width solid $color-border;
+  border-radius: $border-radius-sm;
+}
+
+/// Border with custom color
+@mixin border($color: $color-border, $width: $border-width) {
+  border: $width solid $color;
+  border-radius: $border-radius-sm;
+}
+
+/// Top border
+@mixin border-top($color: $color-border) {
+  border-top: $border-width solid $color;
+}
+
+/// Bottom border
+@mixin border-bottom($color: $color-border) {
+  border-bottom: $border-width solid $color;
+}
+
+// ============================================
+// CARD & CONTAINER MIXINS
+// ============================================
+
+/// Card styling with border and background
+@mixin card($bg-color: $color-background-secondary, $border-color: $color-border) {
+  @include border($border-color);
+  background-color: $bg-color;
+  overflow: hidden;
+}
+
+/// Container padding (main sections)
+@mixin container-padding($horizontal: $space-5xl, $vertical: $space-5xl) {
+  padding: $vertical $horizontal;
+}
+
+// ============================================
+// INTERACTIVE MIXINS
+// ============================================
+
+/// Link default styling
+@mixin link-default($color: $color-text-secondary, $hover-color: $color-primary) {
+  text-decoration: none;
+  color: $color;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+/// Button base styling
+@mixin button-base($padding: $space-lg $space-2xl) {
+  padding: $padding;
+  border-radius: $border-radius-sm;
+  font-family: $font-mono;
+  font-size: $font-size-xs;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all $transition-fast;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/// Primary button style
+@mixin button-primary($bg: $color-primary, $text: $color-background-secondary) {
+  @include button-base();
+  background-color: $bg;
+  color: $text;
+  border: $border-width solid $bg;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+/// Secondary button style
+@mixin button-secondary($border-color: $color-border, $text-color: $color-text-primary) {
+  @include button-base();
+  background-color: transparent;
+  color: $text-color;
+  border: $border-width solid $border-color;
+
+  &:hover {
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+}
+
+/// Ghost button (no border initially)
+@mixin button-ghost($text-color: $color-text-secondary) {
+  @include button-base();
+  background-color: transparent;
+  color: $text-color;
+  border: $border-width solid transparent;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+// ============================================
+// TAG/BADGE MIXINS
+// ============================================
+
+/// Tag styling (colored badge)
+@mixin tag($bg-color, $text-color, $border-color) {
+  color: $text-color;
+  border: $border-width solid $border-color;
+  padding: $space-xs $space-sm;
+  border-radius: $border-radius-sm;
+  text-transform: uppercase;
+  font-size: $font-size-2xs;
+  background-color: rgba($bg-color, 0.1);
+  font-family: $font-mono;
+  width: fit-content;
+}
+
+// ============================================
+// ACCESSIBILITY & UTILITY MIXINS
+// ============================================
+
+/// Visually hide element but keep it accessible
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/// Truncate text with ellipsis
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/// Smooth gradient overlay
+@mixin gradient-overlay(
+  $start-color: transparent,
+  $end-color: $color-background,
+  $direction: to right
+) {
+  background: linear-gradient($direction, $start-color 0%, $end-color 100%);
+}

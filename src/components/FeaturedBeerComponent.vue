@@ -24,14 +24,16 @@ const imagePath = new URL(`../assets/images/${props.beer.imageName}`, import.met
       <span class="type">{{ beer.type }}</span>
       <span class="abv">ABV: {{ beer.abv.toFixed(2) }}%</span>
     </div>
-    <div class="featured-beer__description">
-      <div class="featured-beer__info">
-        <h2 class="name">{{ beer.name }}</h2>
-        <span class="price">{{ beer.price.toFixed(2) }} RSD</span>
+    <div class="featured-beer__bottom">
+      <div class="featured-beer__description">
+        <div class="featured-beer__info">
+          <h2 class="name">{{ beer.name }}</h2>
+          <span class="price">{{ beer.price.toFixed(2) }} RSD</span>
+        </div>
+        <p class="description">{{ beer.description }}</p>
       </div>
-      <p class="description">{{ beer.description }}</p>
+      <button class="add-to-cart" @click="addToCart(beer.id)">Load To Cart +</button>
     </div>
-    <button class="add-to-cart" @click="addToCart(beer.id)">Load To Cart +</button>
   </div>
 </template>
 
@@ -41,9 +43,18 @@ const imagePath = new URL(`../assets/images/${props.beer.imageName}`, import.met
   background-color: $color-black-2;
   border-radius: 3px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
   img {
     width: 100%;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
   }
 
   &__details {

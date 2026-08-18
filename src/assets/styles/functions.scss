@@ -1,0 +1,108 @@
+// ============================================
+// COLOR FUNCTIONS
+// ============================================
+
+/// Lighten color by percentage
+@function lighten-color($color, $percent) {
+  @return lighten($color, $percent);
+}
+
+/// Darken color by percentage
+@function darken-color($color, $percent) {
+  @return darken($color, $percent);
+}
+
+/// Add transparency to color
+@function transparent-color($color, $alpha: 0.1) {
+  @return rgba($color, $alpha);
+}
+
+/// Get contrasting text color (white or black based on background)
+@function text-contrast($bg-color) {
+  @if (lightness($bg-color) > 50%) {
+    @return #000000;
+  } @else {
+    @return #ffffff;
+  }
+}
+
+// ============================================
+// SPACING FUNCTIONS
+// ============================================
+
+/// Scale spacing value by multiplier
+@function space($multiplier: 1) {
+  @return $space-lg * $multiplier;
+}
+
+/// Get padding value based on section type
+@function padding-section($size: 'md') {
+  @if $size == 'sm' {
+    @return $space-2xl;
+  } @else if $size == 'md' {
+    @return $space-5xl;
+  } @else if $size == 'lg' {
+    @return $space-5xl;
+  }
+  @return $space-5xl;
+}
+
+// ============================================
+// FONT SIZE FUNCTIONS
+// ============================================
+
+/// Calculate responsive font size
+@function font-size-responsive($mobile, $desktop) {
+  // Using mobile-first approach
+  @return $mobile;
+}
+
+/// Get heading font size
+@function heading-size($level: 2) {
+  @if $level == 1 {
+    @return $font-size-h1;
+  } @else if $level == 2 {
+    @return $font-size-h2;
+  } @else if $level == 3 {
+    @return $font-size-h3;
+  } @else if $level == 4 {
+    @return $font-size-h4;
+  } @else if $level == 5 {
+    @return $font-size-h5;
+  } @else if $level == 6 {
+    @return $font-size-h6;
+  }
+  @return $font-size-h2;
+}
+
+// ============================================
+// Z-INDEX FUNCTIONS
+// ============================================
+
+/// Get layering z-index for common components
+@function z-index($layer: 'base') {
+  @if $layer == 'base' {
+    @return $z-index-base;
+  } @else if $layer == 'dropdown' {
+    @return $z-index-dropdown;
+  } @else if $layer == 'fixed' {
+    @return $z-index-fixed;
+  } @else if $layer == 'modal' {
+    @return $z-index-modal;
+  }
+  @return $z-index-base;
+}
+
+// ============================================
+// MEASUREMENT FUNCTIONS
+// ============================================
+
+/// Convert pixels to rem units (base 16px)
+@function to-rem($px) {
+  @return ($px / 16) * 1rem;
+}
+
+/// Convert pixels to em units
+@function to-em($px, $base: 16) {
+  @return ($px / $base) * 1em;
+}
