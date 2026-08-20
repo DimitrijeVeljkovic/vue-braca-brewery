@@ -27,7 +27,7 @@ const imagePath = new URL(`../assets/images/${props.beer.imageName}`, import.met
     <div class="featured-beer__bottom">
       <div class="featured-beer__description">
         <div class="featured-beer__info">
-          <h2 class="name">{{ beer.name }}</h2>
+          <h4>{{ beer.name }}</h4>
           <span class="price">{{ beer.price.toFixed(2) }} RSD</span>
         </div>
         <p class="description">{{ beer.description }}</p>
@@ -39,89 +39,54 @@ const imagePath = new URL(`../assets/images/${props.beer.imageName}`, import.met
 
 <style lang="scss" scoped>
 .featured-beer {
-  border: 1px solid $color-darkgray;
-  background-color: $color-black-2;
-  border-radius: 3px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  @include card($color-background-secondary);
+  @include flex-column;
 
   img {
     width: 100%;
   }
 
   &__bottom {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex-between;
+    @include flex-column;
     flex: 1;
   }
 
   &__details {
-    font-family: 'GeistMonoRegular', monospace;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid $color-darkgray;
+    @include flex-between(center);
+    @include container-padding($space-xl, $space-xl);
+    @include border-bottom;
   }
 
   &__info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
+    @include flex-between(center);
+    margin-bottom: $space-lg;
   }
 
   &__description {
-    padding: 20px;
+    @include container-padding($space-xl, $space-xl);
   }
 
   .add-to-cart {
-    text-transform: uppercase;
-    font-family: 'GeistMonoRegular', monospace;
-    color: $color-yellow;
-    background-color: $color-darkgray;
+    @include button-primary($color-darkgray, $color-primary);
     border: none;
     width: 100%;
-    font-size: 13px;
-    padding: 16px 0;
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 
   .type {
-    color: $color-red;
-    border: 1px solid $color-red;
-    padding: 4px 8px;
-    border-radius: 3px;
-    text-transform: uppercase;
-    font-size: 12px;
-    background-color: rgb($color-red, 0.1);
+    @include tag($color-accent, $color-accent, $color-accent);
   }
 
   .abv {
-    font-size: 14px;
-    color: $color-lightgray;
-  }
-
-  .name {
-    font-size: 28px;
-    text-transform: uppercase;
+    @include text-mono($font-size-sm, $color-text-secondary);
   }
 
   .price {
-    font-size: 18px;
-    color: $color-yellow;
-    font-family: 'GeistMonoRegular', monospace;
+    @include text-mono($font-size-large, $color-primary);
   }
 
   .description {
-    font-size: 14px;
-    color: $color-lightgray;
-    font-family: 'GeistRegular', sans-serif;
+    @include text-description;
   }
 }
 </style>
