@@ -45,6 +45,13 @@
   gap: $gap;
 }
 
+/// Custom columns grid
+@mixin grid-columns-custom($columns, $gap: $space-4xl) {
+  display: grid;
+  grid-template-columns: $columns;
+  gap: $gap;
+}
+
 // ============================================
 // TYPOGRAPHY MIXINS
 // ============================================

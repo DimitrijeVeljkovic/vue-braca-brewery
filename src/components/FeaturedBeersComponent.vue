@@ -9,7 +9,7 @@ const beers = FEATURED_BEERS_MOCK
 <template>
   <div class="featured-beers">
     <div class="featured-beers__heading">
-      <h2>THE SMASH TRIO</h2>
+      <h2>The smash trio</h2>
       <p>
         Discover our selection of featured beers, carefully crafted to delight your taste buds. From
         hoppy IPAs to rich stouts, explore the flavors that define our brewery's excellence.
@@ -23,29 +23,19 @@ const beers = FEATURED_BEERS_MOCK
 
 <style lang="scss" scoped>
 .featured-beers {
-  padding: 80px 80px;
+  @include container-padding;
 
   &__heading {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    margin-bottom: 40px;
-
-    h2 {
-      font-size: 64px;
-      text-transform: uppercase;
-    }
+    @include grid-columns-custom(2fr 1fr);
+    margin-bottom: $space-4xl;
 
     p {
-      font-size: 16px;
-      color: $color-lightgray;
-      font-family: 'GeistRegular', sans-serif;
+      @include text-body;
     }
   }
 
   &__content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    @include grid-auto-fit(300px);
   }
 }
 </style>
