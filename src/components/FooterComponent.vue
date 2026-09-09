@@ -13,19 +13,19 @@
         <p class="footer__est">Est // 2024 . Pirot . Serbia</p>
       </div>
       <div class="footer__nav-menu">
-        <h4>Menu</h4>
+        <span>Menu</span>
         <router-link to="/home">Home</router-link>
         <router-link to="/about">About</router-link>
         <router-link to="/contact">Contact</router-link>
         <router-link to="/store">Store</router-link>
       </div>
       <div class="footer__access">
-        <h4>Access Point</h4>
+        <span>Access Point</span>
         <router-link to="/login">Log In</router-link>
         <router-link to="/signup">Sign Up</router-link>
       </div>
       <div class="footer__subscribe">
-        <h4>Subscribe</h4>
+        <span>Subscribe</span>
         <p>Subscribe to our newsletter to receive the latest news and updates.</p>
         <div class="footer__subscribe-input">
           <input type="email" placeholder="Enter email address" />
@@ -46,28 +46,20 @@
 
 <style lang="scss" scoped>
 .footer {
-  padding: 40px 80px;
-  border-top: 1px solid $color-darkgray;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  @include container-padding($space-5xl, $space-4xl);
+  @include border-top;
+  @include flex-column($space-3xl);
 
   &__top {
-    display: grid;
-    grid-template-columns: 4fr 1fr 1fr 3fr;
-    gap: 32px;
+    @include grid-columns-custom(4fr 1fr 1fr 3fr, $space-3xl);
   }
 
   &__bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-between(center);
   }
 
   &__company-info {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    @include flex-column($space-lg);
 
     img {
       height: 60px;
@@ -75,65 +67,41 @@
     }
 
     p {
-      color: $color-lightgray;
-
       &.footer__description {
-        font-family: 'GeistRegular', sans-serif;
-        font-size: 15px;
+        @include text-description($font-size-sm);
       }
 
       &.footer__est {
-        font-family: 'GeistMonoRegular', monospace;
-        font-size: 13px;
-        text-transform: uppercase;
-        color: $color-gray;
+        @include text-mono($font-size-xs, $color-text-muted);
       }
     }
   }
 
   &__nav-menu,
   &__access {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    @include flex-column($space-md);
 
-    h4 {
-      font-size: 13px;
-      color: $color-yellow;
-      text-transform: uppercase;
-      font-family: 'GeistMonoRegular', monospace;
+    span {
+      @include text-mono($font-size-xs, $color-primary);
       font-weight: normal;
     }
 
     a {
-      text-decoration: none;
-      color: $color-lightgray;
-      font-family: 'GeistRegular', sans-serif;
-      font-size: 14px;
-
-      &:hover {
-        color: $color-yellow;
-      }
+      @include link-default;
+      @include text-body($font-size-sm);
     }
   }
 
   &__subscribe {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    @include flex-column($space-xl);
 
-    h4 {
-      font-size: 13px;
-      color: $color-yellow;
-      text-transform: uppercase;
-      font-family: 'GeistMonoRegular', monospace;
+    span {
+      @include text-mono($font-size-xs, $color-primary);
       font-weight: normal;
     }
 
     p {
-      color: $color-lightgray;
-      font-family: 'GeistRegular', sans-serif;
-      font-size: 14px;
+      @include text-body($font-size-sm);
     }
   }
 
@@ -144,52 +112,35 @@
 
     input {
       padding: 12px 16px;
-      border-radius: 3px;
-      border: 1px solid $color-darkgray;
-      background-color: $color-black-2;
-      color: $color-lightgray;
-      font-family: 'GeistMonoRegular', monospace;
-      text-transform: uppercase;
+      @include border;
+      @include text-mono;
+      background-color: $color-background-secondary;
 
       &::placeholder {
-        color: $color-gray;
-        font-family: 'GeistMonoRegular', monospace;
-        text-transform: uppercase;
+        color: $color-text-muted;
+        font-family: $font-mono;
       }
     }
 
     button {
-      padding: 12px 16px;
-      border-radius: 3px;
-      border: none;
-      background-color: $color-yellow;
-      color: $color-black;
-      font-family: 'GeistMonoRegular', monospace;
-      text-transform: uppercase;
-
-      &:hover {
-        cursor: pointer;
-      }
+      @include button-primary($color-primary, $color-background);
     }
   }
 
   &__copyright {
-    color: $color-gray;
-    font-family: 'GeistMonoRegular', monospace;
-    font-size: 13px;
-    text-transform: uppercase;
+    @include text-mono($font-size-xs, $color-text-muted);
   }
 
   &__social-media {
     display: flex;
-    gap: 12px;
+    gap: $space-md;
 
     i {
-      font-size: 20px;
-      color: $color-lightgray;
+      font-size: $font-size-h6;
+      color: $color-text-secondary;
 
       &:hover {
-        color: $color-yellow;
+        color: $color-primary;
       }
     }
   }

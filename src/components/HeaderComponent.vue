@@ -28,65 +28,55 @@ const { cartCount } = storeToRefs(cartStore)
 
 <style lang="scss" scoped>
 .nav-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 80px;
-  border-bottom: 1px solid $color-darkgray;
-  background-color: $color-black;
+  @include flex-between(center);
+  @include container-padding($space-5xl, $space-xs);
+  @include border-bottom;
+  background-color: $color-background;
 
   .router-link-active {
-    color: $color-yellow;
+    color: $color-primary;
   }
 
   a {
-    text-decoration: none;
-    color: $color-lightgray;
-    font-family: 'GeistMonoRegular', monospace;
-    font-size: 13px;
-    text-transform: uppercase;
+    @include link-default;
+    @include text-mono;
     display: inline-block;
 
-    &:hover {
-      color: $color-yellow;
-    }
-
     .pi-shopping-cart {
-      margin-right: 5px;
-      font-size: 16px;
-      color: $color-yellow;
+      margin-right: $space-xs;
+      font-size: $font-size-body;
+      color: $color-primary;
       vertical-align: middle;
     }
   }
 
   .button {
-    border: 1px solid $color-darkgray;
-    border-radius: 3px;
-    background-color: $color-black-2;
+    @include border;
+    background-color: $color-background-secondary;
 
     &__access {
       text-transform: capitalize;
-      border-color: $color-yellow;
+      border-color: $color-primary;
 
       span {
-        color: $color-yellow;
+        color: $color-primary;
       }
     }
   }
 
   &__right {
     display: flex;
-    gap: 16px;
+    gap: $space-lg;
 
     a {
-      padding: 5px 10px;
+      padding: $space-xs $space-sm;
     }
   }
 
   &__left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    @include flex-center;
+    justify-content: flex-start;
+    gap: $space-2xl;
 
     img {
       height: 60px;
